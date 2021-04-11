@@ -1,5 +1,7 @@
 import cv2
 import numpy as np
+import glob
+import os.path
 from matplotlib import pyplot as plt
 from skimage import metrics
 
@@ -44,8 +46,21 @@ def hausdorff(img1, img2):
     return metrics.hausdorff_distance(img1, img2)
 
 
-img1 = prepare(cv2.imread('./assets/test_square.jpg', 0))
-img2 = prepare(cv2.imread('./assets/square.jpg', 0))
+def minimize(img1, img1_filename):
+    ds = {}
+    for filename in glob.glob('./assets/*.jpg'):
+        if filename == img1_filename:
+            continue
+        img2 = cv2.imread(filename, 0)
+        d = hausdorff(prepare(img1), prepare(img2))
+        ds[filename] = d
+    min_d = min(ds.values())
+    return (min_d, [filename for filename in ds if ds[filename] == min_d])
+
+
+input_filename = './assets/test_star.jpg'
+img1 = cv2.imread(input_filename, 0)
+min_d, matches = minimize(img1, input_filename)
 
 plt.figure()
 
@@ -56,12 +71,14 @@ plt.xticks([])
 plt.yticks([])
 
 plt.subplot(122)
-plt.imshow(img1, cmap='gray', interpolation='none')
-plt.imshow(img2, cmap='jet', interpolation='none', alpha=0.5)
-plt.title('Match')
+plt.imshow(prepare(img1), cmap='gray', interpolation='none')
+for match in matches:
+    img = prepare(cv2.imread(match, 0))
+    plt.imshow(img, cmap='jet', interpolation='none', alpha=0.5)
+plt.title('Matches: ' + ','.join(matches))
 plt.xticks([])
 plt.yticks([])
 
-plt.suptitle('d_H(img1, img2) = ' + str(hausdorff(img1, img2)), y=0.1)
+plt.suptitle('d_H(img1, img2) = ' + str(min_d), y=0.1)
 
 plt.show()
