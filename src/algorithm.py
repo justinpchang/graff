@@ -42,6 +42,8 @@ def prepare(img):
 img1 = prepare(cv2.imread('./assets/test_square.jpg', 0))
 img2 = prepare(cv2.imread('./assets/square.jpg', 0))
 
+plt.figure()
+
 plt.subplot(121)
 plt.imshow(img1, cmap='gray', interpolation='none')
 plt.title('Input')
@@ -54,5 +56,7 @@ plt.imshow(img2, cmap='jet', interpolation='none', alpha=0.5)
 plt.title('Match')
 plt.xticks([])
 plt.yticks([])
+
+plt.suptitle('d_H(img1, img2) = ' + str(5), y=0.1)
 
 plt.show()
