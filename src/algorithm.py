@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from matplotlib import pyplot as plt
+from skimage import metrics
 
 
 def binarize(img):
@@ -39,6 +40,10 @@ def prepare(img):
     return center(clean(binarize(img)))
 
 
+def hausdorff(img1, img2):
+    return metrics.hausdorff_distance(img1, img2)
+
+
 img1 = prepare(cv2.imread('./assets/test_square.jpg', 0))
 img2 = prepare(cv2.imread('./assets/square.jpg', 0))
 
@@ -57,6 +62,6 @@ plt.title('Match')
 plt.xticks([])
 plt.yticks([])
 
-plt.suptitle('d_H(img1, img2) = ' + str(5), y=0.1)
+plt.suptitle('d_H(img1, img2) = ' + str(hausdorff(img1, img2)), y=0.1)
 
 plt.show()
