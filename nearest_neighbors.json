@@ -1,0 +1,98 @@
+[
+  {
+    "similarity": 1.0,
+    "master_file_name": "square",
+    "similar_file_name": "square"
+  },
+  {
+    "similarity": 0.7407,
+    "master_file_name": "square",
+    "similar_file_name": "smile"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "check",
+    "similar_file_name": "check"
+  },
+  {
+    "similarity": 0.8445,
+    "master_file_name": "check",
+    "similar_file_name": "triangle"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "sine",
+    "similar_file_name": "sine"
+  },
+  {
+    "similarity": 0.7472,
+    "master_file_name": "sine",
+    "similar_file_name": "smile"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "smile",
+    "similar_file_name": "smile"
+  },
+  {
+    "similarity": 0.7812,
+    "master_file_name": "smile",
+    "similar_file_name": "arrow"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "star",
+    "similar_file_name": "star"
+  },
+  {
+    "similarity": 0.8225,
+    "master_file_name": "star",
+    "similar_file_name": "arrow"
+  },
+  { "similarity": 1.0, "master_file_name": "x", "similar_file_name": "x" },
+  {
+    "similarity": 0.8438,
+    "master_file_name": "x",
+    "similar_file_name": "check"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "triangle",
+    "similar_file_name": "triangle"
+  },
+  {
+    "similarity": 0.8445,
+    "master_file_name": "triangle",
+    "similar_file_name": "check"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "arrow",
+    "similar_file_name": "arrow"
+  },
+  {
+    "similarity": 0.8225,
+    "master_file_name": "arrow",
+    "similar_file_name": "star"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "circle",
+    "similar_file_name": "circle"
+  },
+  {
+    "similarity": 0.6636,
+    "master_file_name": "circle",
+    "similar_file_name": "sine"
+  },
+  {
+    "similarity": 1.0,
+    "master_file_name": "equals",
+    "similar_file_name": "equals"
+  },
+  {
+    "similarity": 0.8002,
+    "master_file_name": "equals",
+    "similar_file_name": "arrow"
+  }
+]
