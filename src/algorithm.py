@@ -35,21 +35,23 @@ def center(img):
     return centered
 
 
-img = cv2.imread('./assets/test_square.jpg', 0)
-result = img
-result = binarize(result)
-result = clean(result)
-result = center(result)
+def prepare(img):
+    return center(clean(binarize(img)))
+
+
+img1 = prepare(cv2.imread('./assets/test_square.jpg', 0))
+img2 = prepare(cv2.imread('./assets/square.jpg', 0))
 
 plt.subplot(121)
-plt.imshow(img, cmap='gray')
-plt.title('Original')
+plt.imshow(img1, cmap='gray', interpolation='none')
+plt.title('Input')
 plt.xticks([])
 plt.yticks([])
 
 plt.subplot(122)
-plt.imshow(result, cmap='gray')
-plt.title('Result')
+plt.imshow(img1, cmap='gray', interpolation='none')
+plt.imshow(img2, cmap='jet', interpolation='none', alpha=0.5)
+plt.title('Match')
 plt.xticks([])
 plt.yticks([])
 
