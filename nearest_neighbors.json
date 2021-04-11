@@ -41,6 +41,16 @@
   },
   {
     "similarity": 1.0,
+    "master_file_name": "test_square",
+    "similar_file_name": "test_square"
+  },
+  {
+    "similarity": 0.7501,
+    "master_file_name": "test_square",
+    "similar_file_name": "equals"
+  },
+  {
+    "similarity": 1.0,
     "master_file_name": "star",
     "similar_file_name": "star"
   },

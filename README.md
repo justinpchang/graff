@@ -4,10 +4,14 @@ STATUS: PROOF OF CONCEPT
 
 hand-draw tag registration and recognition
 
-powered by tensorflow
+## algorithm
 
-```
-bin source/activate
-python3 src/get_image_feature_vectors.py
-python3 src/cluster_image_feature_vectors.py
-``` 
+Given an image of a tag and a library of registered tag feature vectors, determine the most closely matching tag to the given image.
+
+- Convert image to white on black binary image
+- Clean image (erode then dilate)
+- Center image (get bounding box)
+- Generate feature vector
+- For each registered tag
+  - Calculate Hausdorff distance between image and tag
+- Return nearest tag

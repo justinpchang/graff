@@ -60,4 +60,5 @@ def cluster():
     with open("nearest_neighbors.json", "w") as out:
         json.dump(named_nearest_neighbors, out)
 
+
 cluster()
